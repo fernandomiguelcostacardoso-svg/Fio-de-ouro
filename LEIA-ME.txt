@@ -1,0 +1,18 @@
+FIO DE MEL — SITE DEMONSTRATIVO
+
+Arquivos:
+- index.html: site completo em um único arquivo, com CSS e JavaScript incluídos.
+- vestido.jpg: imagem enviada para o banner principal. Mantenha este arquivo na mesma pasta de index.html.
+
+Como abrir:
+1. Extraia o ZIP completo.
+2. Mantenha index.html e vestido.jpg juntos na mesma pasta.
+3. Abra index.html no navegador.
+4. É necessário estar conectado à internet para carregar imagens externas e as publicações incorporadas do Instagram.
+
+Antes de publicar:
+- Substitua os produtos, preços e imagens de demonstração pelo catálogo real.
+- Confirme o número de WhatsApp definido no código (5561992971165).
+- Configure domínio e hospedagem se quiser colocar o site no ar.
+
+Este é um protótipo front-end independente. Não possui painel administrativo, banco de dados, checkout ou pagamentos integrados.

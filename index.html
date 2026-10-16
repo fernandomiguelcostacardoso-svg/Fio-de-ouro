@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f9e7c8">
+<meta name="description" content="Fio de Mel — moda feminina, conjuntos, vestidos e novidades.">
+<title>Fio de Mel | Moda Feminina</title>
+<style>
+:root{--cream:#fff8ec;--butter:#f8dfae;--yellow:#f2c86b;--coral:#e56f54;--green:#214f3d;--ink:#22251f;--muted:#716e65;--white:#fff;--line:#eadfce}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+.topbar{background:var(--green);color:white;text-align:center;padding:10px 16px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:10;background:rgba(255,248,236,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1240px;margin:auto;padding:17px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;font-family:Georgia,serif;font-weight:bold;font-size:27px;letter-spacing:-1.5px}
+.brand-mark{width:37px;height:37px;background:var(--yellow);border-radius:50% 50% 48% 12%;display:grid;place-items:center;color:var(--green);font-size:20px;transform:rotate(-8deg)}
+nav{display:flex;gap:28px;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.nav-actions{display:flex;gap:12px;align-items:center}.icon-btn{border:1px solid var(--line);background:transparent;border-radius:50%;width:42px;height:42px;display:grid;place-items:center;font-size:18px}
+.menu-toggle{display:none}
+.hero{max-width:1240px;margin:26px auto 54px;padding:0 24px}
+.hero-panel{min-height:500px;border-radius:6px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;background:#f2d9a7;position:relative}
+.hero-copy{padding:clamp(34px,6vw,80px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;position:relative;z-index:1}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:bold}
+.hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(42px,5.8vw,76px);line-height:.99;letter-spacing:-.055em;margin:20px 0}
+.hero p{font-size:15px;line-height:1.7;max-width:360px;color:#514c3e}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:white;padding:15px 23px;border:0;border-radius:2px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
+.btn:hover{background:#163a2c;transform:translateY(-2px)}.btn-light{background:var(--cream);color:var(--green);border:1px solid var(--green)}
+.hero-art{position:relative;min-height:390px;background:#f4e8d5;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-art img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:contain;object-position:center center;mix-blend-mode:normal}
+.hero-art:after{content:none}
+.stamp{position:absolute;left:14%;bottom:12%;width:105px;height:105px;border:1px solid rgba(255,255,255,.8);border-radius:50%;display:grid;place-items:center;color:white;text-align:center;font-family:Georgia,serif;font-size:14px;transform:rotate(-12deg);padding:14px}
+.section{max-width:1240px;margin:0 auto;padding:0 24px 64px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:26px}
+.section h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(32px,4vw,48px);letter-spacing:-.04em;margin:8px 0 0}
+.subtext{color:var(--muted);font-size:13px;line-height:1.6}
+.category-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:58px}
+.category{min-height:155px;padding:20px;display:flex;align-items:end;position:relative;overflow:hidden;background:var(--butter);isolation:isolate}
+.category:nth-child(2){background:#d9e0bd}.category:nth-child(3){background:#e7b7a8}.category:nth-child(4){background:#e7c7e0}
+.category:before{content:"";position:absolute;width:140px;height:140px;border-radius:50%;border:1px solid rgba(255,255,255,.8);top:-35px;right:-20px;z-index:-1}
+.category:after{content:"✿";position:absolute;right:20px;top:8px;font-size:80px;color:rgba(255,255,255,.55);transform:rotate(-18deg);z-index:-1}
+.category strong{font-family:Georgia,serif;font-size:25px;font-weight:400}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.filter{border:1px solid var(--line);background:transparent;padding:10px 15px;border-radius:99px;font-size:12px;color:var(--muted)}
+.filter.active,.filter:hover{background:var(--green);border-color:var(--green);color:white}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product{min-width:0}.product-photo{aspect-ratio:3/4;position:relative;background:#efe4d3;overflow:hidden}
+.product-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+.product:hover .product-photo img{transform:scale(1.04)}
+.tag{position:absolute;left:10px;top:10px;background:var(--cream);padding:7px 9px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.quick-add{position:absolute;left:10px;right:10px;bottom:10px;border:0;background:rgba(255,248,236,.94);padding:12px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.product-info{padding:13px 2px}.product-name{font-size:14px;margin-bottom:8px}.product-price{font-size:14px;font-weight:bold}.old-price{color:#8d887d;text-decoration:line-through;font-size:12px;margin-left:7px;font-weight:normal}
+.note{font-size:11px;color:var(--muted);margin-top:6px}
+.editorial{max-width:1192px;margin:0 auto 70px;display:grid;grid-template-columns:1fr 1fr;background:#e0e5cd;align-items:stretch}
+.editorial-image{height:clamp(480px,52vw,686px);min-height:480px;overflow:hidden;position:relative;background:#f4e8d5;display:flex;align-items:stretch;isolation:isolate}
+.insta-carousel{width:100%;height:100%;position:relative;padding:0;overflow:hidden;display:flex;align-items:stretch;justify-content:center;background:#c8b7a2}
+.insta-blur-layer{position:absolute;inset:-24px;z-index:0;overflow:hidden;filter:blur(26px);transform:scale(1.12);opacity:.88;pointer-events:none}
+.insta-blur-layer iframe{width:100%;height:100%;border:0;opacity:0;position:absolute;inset:0;transition:opacity .35s}
+.insta-blur-layer iframe.active{opacity:1}
+.insta-track{position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:stretch;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0;scrollbar-width:none}
+.insta-track::-webkit-scrollbar{display:none}
+.insta-slide{flex:0 0 100%;width:100%;height:100%;display:flex;align-items:stretch;justify-content:center;scroll-snap-align:start;background:transparent;border:0;border-radius:0;overflow:hidden;box-shadow:none;margin:0;padding:0}
+.insta-slide iframe{display:block;width:min(100%,390px);height:100%;min-height:480px;border:0;outline:0;border-radius:0;background:transparent;flex-shrink:0;transform:none!important;scale:1!important;zoom:1!important}
+.insta-controls{position:absolute;bottom:-28px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:12px;z-index:2;pointer-events:none}
+.insta-dots{display:flex;gap:12px;align-items:center;pointer-events:auto}.insta-dot{width:14px;height:14px;border:0;border-radius:50%;padding:0;background:#e2d8c7}.insta-dot.active{background:var(--green);transform:none}
+.insta-caption{display:none}
+.editorial-copy{padding:clamp(30px,6vw,75px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.editorial h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(34px,4vw,54px);line-height:1.03;letter-spacing:-.04em;margin:15px 0}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;margin-bottom:60px}
+.benefit{display:flex;gap:12px;align-items:flex-start}.benefit-icon{font-size:22px}.benefit strong{font-size:12px;letter-spacing:.08em;text-transform:uppercase}.benefit p{font-size:12px;color:var(--muted);margin:7px 0 0;line-height:1.5}
+.newsletter{background:var(--butter);padding:45px 24px;text-align:center;margin-top:20px}.newsletter h2{font-family:Georgia,serif;font-size:36px;font-weight:400;margin:0 0 10px}.newsletter p{font-size:13px;color:#625744}
+.newsletter form{display:flex;max-width:460px;margin:22px auto 0}.newsletter input{flex:1;min-width:0;border:1px solid #d3bd91;background:rgba(255,255,255,.6);padding:14px}.newsletter button{border-radius:0}
+footer{background:var(--green);color:#fff8ec;padding:45px 24px 24px}.footer-inner{max-width:1192px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}.footer-brand{font-family:Georgia,serif;font-size:31px}.footer-inner p,.footer-inner a{font-size:12px;line-height:1.9;color:#e3e8dc}.footer-title{font-size:11px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:12px}.copyright{max-width:1192px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);font-size:10px;color:#d4ddcf}
+.whatsapp{position:fixed;right:22px;bottom:22px;z-index:20;width:58px;height:58px;border-radius:50%;background:#25D366;color:white;display:grid;place-items:center;box-shadow:0 8px 24px #0002;border:3px solid white;transition:transform .2s}.whatsapp:hover{transform:scale(1.05)}.whatsapp svg{width:31px;height:31px;display:block;fill:currentColor}
+.cart-count{font-size:10px;background:var(--coral);color:white;border-radius:50%;padding:3px 5px;vertical-align:top;margin-left:-7px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--ink);color:white;padding:13px 18px;font-size:13px;z-index:30;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){nav{gap:14px}.hero-panel{min-height:420px}.hero-copy{padding:32px}.products{grid-template-columns:repeat(2,1fr);gap:20px}.category-row{grid-template-columns:repeat(2,1fr)}.editorial{margin-left:24px;margin-right:24px}.footer-inner{grid-template-columns:1fr 1fr}.footer-inner>div:first-child{grid-column:1/-1}}
+@media(max-width:600px){.topbar{font-size:10px}.nav{padding:13px 16px}.brand{font-size:23px}.brand-mark{width:32px;height:32px}.menu-toggle{display:grid}.nav nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--cream);padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}.nav nav.open{display:flex}.nav-actions .icon-btn:first-child{display:none}.hero{padding:0 12px;margin:14px auto 38px}.hero-panel{grid-template-columns:1fr;min-height:0}.hero-copy{padding:34px 26px 38px}.hero h1{font-size:52px;margin:15px 0}.hero-art{height:clamp(400px,120vw,560px);min-height:400px}.hero-art:after{content:none}.stamp{width:80px;height:80px;font-size:11px}.section{padding:0 16px 45px}.section-head{align-items:start;flex-direction:column}.category-row{gap:10px;margin-bottom:42px}.category{min-height:125px;padding:14px}.category strong{font-size:22px}.products{gap:17px 12px}.product-name{font-size:13px}.product-price{font-size:13px}.quick-add{font-size:10px;padding:10px}.editorial{margin:0 12px 45px;grid-template-columns:1fr}.editorial-image{height:clamp(480px,145vw,650px);min-height:480px}.insta-slide{flex-basis:100%;width:100%}.insta-slide iframe{width:min(100%,390px);height:100%;min-height:480px}.insta-controls{bottom:-28px}.editorial-copy{padding:32px 26px}.benefits{grid-template-columns:1fr;gap:22px}.newsletter{padding:35px 18px}.newsletter h2{font-size:30px}.newsletter form{flex-direction:column;gap:8px}.newsletter button{min-height:44px}.footer-inner{grid-template-columns:1fr 1fr;gap:25px}.footer-inner>div:first-child{grid-column:1/-1}.whatsapp{width:54px;height:54px;right:15px;bottom:15px}}
+</style>
+</head>
+<body>
+<div class="topbar">Moda que floresce com você · Enviamos para todo o Brasil</div>
+<header>
+  <div class="nav">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    <a class="brand" href="#"><span class="brand-mark">✿</span> fio de mel</a>
+    <nav id="mainNav"><a href="#novidades">Novidades</a><a href="#categorias">Categorias</a><a href="#mais-vendidos">Mais vendidos</a><a href="#sobre">A marca</a></nav>
+    <div class="nav-actions"><button class="icon-btn" aria-label="Buscar" onclick="document.getElementById('mais-vendidos').scrollIntoView({behavior:'smooth'})">⌕</button><button class="icon-btn" aria-label="Sacola" onclick="showToast('Sua sacola está pronta para receber seus favoritos!')">♡<span class="cart-count" id="cartCount">0</span></button></div>
+  </div>
+</header>
+<main>
+<section class="hero" id="novidades">
+  <div class="hero-panel">
+    <div class="hero-copy">
+      <span class="eyebrow">Nova coleção · Alto astral</span>
+      <h1>Vista o que<br>faz florescer.</h1>
+      <p>Peças cheias de personalidade para acompanhar sua melhor versão. Descubra seus novos favoritos na Fio de Mel.</p>
+      <a class="btn" href="#mais-vendidos">Descobrir a coleção <span>↗</span></a>
+    </div>
+    <div class="hero-art">
+      <img src="vestido.jpg" alt="Dois vestidos longos expostos em manequins" fetchpriority="high">
+    </div>
+  </div>
+</section>
+<section class="section" id="categorias">
+  <div class="section-head"><div><span class="eyebrow">Encontre seu estilo</span><h2>Explore por categoria</h2></div><p class="subtext">Looks para todos os seus momentos.</p></div>
+  <div class="category-row">
+    <a class="category" href="#mais-vendidos" onclick="setFilter('Vestidos')"><strong>Vestidos ↗</strong></a>
+    <a class="category" href="#mais-vendidos" onclick="setFilter('Conjuntos')"><strong>Conjuntos ↗</strong></a>
+    <a class="category" href="#mais-vendidos" onclick="setFilter('Blusas')"><strong>Blusas ↗</strong></a>
+    <a class="category" href="#mais-vendidos" onclick="setFilter('Acessórios')"><strong>Acessórios ↗</strong></a>
+  </div>
+</section>
+<section class="section" id="mais-vendidos">
+  <div class="section-head"><div><span class="eyebrow">Escolhas especiais</span><h2>Queridinhos da Fio de Mel</h2></div><a class="subtext" href="#contato">Ver atendimento pelo WhatsApp ↗</a></div>
+  <div class="filters" id="filters"><button class="filter active" data-filter="Todos">Todos</button><button class="filter" data-filter="Vestidos">Vestidos</button><button class="filter" data-filter="Conjuntos">Conjuntos</button><button class="filter" data-filter="Blusas">Blusas</button><button class="filter" data-filter="Acessórios">Acessórios</button></div>
+  <div class="products" id="productGrid"></div>
+  <p class="note" style="margin-top:18px">* Produtos, imagens e preços exibidos são demonstrativos e devem ser substituídos pelo catálogo real da loja.</p>
+</section>
+<section class="editorial" id="sobre">
+  <div class="editorial-image">
+    <div class="insta-carousel" aria-label="Carrossel de publicações do Instagram da Fio de Mel">
+      <div class="insta-blur-layer" id="instaBlurLayer" aria-hidden="true">
+        <iframe src="https://www.instagram.com/reel/DeejiSWg-cg/embed/" tabindex="-1" aria-hidden="true" loading="eager"></iframe>
+        <iframe src="https://www.instagram.com/reel/DeMoF_qxZIL/embed/" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+        <iframe src="https://www.instagram.com/p/Dd9fHsCgrZM/embed/" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+        <iframe src="https://www.instagram.com/reel/Dd6zxE6g-qh/embed/" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+        <iframe src="https://www.instagram.com/p/DdueUsPDx3R/embed/" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+        <iframe src="https://www.instagram.com/reel/Dc_JJXfApcS/embed/" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+      </div>
+      <div class="insta-track" id="instaTrack">
+        <article class="insta-slide"><iframe src="https://www.instagram.com/reel/DeejiSWg-cg/embed/" title="Reel da Fio de Mel 1" loading="lazy" allowtransparency="true" allow="encrypted-media; clipboard-write; web-share" scrolling="no"></iframe></article>
+        <article class="insta-slide"><iframe src="https://www.instagram.com/reel/DeMoF_qxZIL/embed/" title="Reel da Fio de Mel 2" loading="lazy" allowtransparency="true" allow="encrypted-media; clipboard-write; web-share" scrolling="no"></iframe></article>
+        <article class="insta-slide"><iframe src="https://www.instagram.com/p/Dd9fHsCgrZM/embed/" title="Publicação da Fio de Mel 3" loading="lazy" allowtransparency="true" allow="encrypted-media; clipboard-write; web-share" scrolling="no"></iframe></article>
+        <article class="insta-slide"><iframe src="https://www.instagram.com/reel/Dd6zxE6g-qh/embed/" title="Reel da Fio de Mel 4" loading="lazy" allowtransparency="true" allow="encrypted-media; clipboard-write; web-share" scrolling="no"></iframe></article>
+        <article class="insta-slide"><iframe src="https://www.instagram.com/p/DdueUsPDx3R/embed/" title="Publicação da Fio de Mel 5" loading="lazy" allowtransparency="true" allow="encrypted-media; clipboard-write; web-share" scrolling="no"></iframe></article>
+        <article class="insta-slide"><iframe src="https://www.instagram.com/reel/Dc_JJXfApcS/embed/" title="Reel da Fio de Mel 6" loading="lazy" allowtransparency="true" allow="encrypted-media; clipboard-write; web-share" scrolling="no"></iframe></article>
+      </div>
+      <div class="insta-controls"><div class="insta-dots" id="instaDots" aria-label="Indicadores de publicação"></div></div>
+    </div>
+  </div>
+  <div class="editorial-copy"><span class="eyebrow">Nossa essência</span><h2>Seu estilo.<br>Sua história.<br>Seu momento.</h2><p class="subtext">A Fio de Mel celebra a beleza de ser quem você é. Encontre peças para expressar seu jeito, com leveza, cor e personalidade.</p><a class="btn btn-light" href="#contato">Fale com a gente ↗</a></div>
+</section>
+<section class="section">
+  <div class="benefits">
+    <div class="benefit"><span class="benefit-icon">♡</span><div><strong>Atendimento próximo</strong><p>Tire dúvidas e receba ajuda para escolher seu look.</p></div></div>
+    <div class="benefit"><span class="benefit-icon">✧</span><div><strong>Novidades sempre</strong><p>Acompanhe as novas peças e coleções da loja.</p></div></div>
+    <div class="benefit"><span class="benefit-icon">↗</span><div><strong>Compra facilitada</strong><p>Converse com a equipe e combine os detalhes do pedido.</p></div></div>
+  </div>
+</section>
+<section class="newsletter" id="contato"><span class="eyebrow">Vamos conversar?</span><h2>Seu próximo look te espera.</h2><p>Chame a Fio de Mel no WhatsApp para consultar tamanhos, valores e disponibilidade.</p><a class="btn" style="margin-top:10px" id="contactButton" href="#" target="_blank" rel="noopener">Chamar no WhatsApp ↗</a></section>
+</main>
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-brand">fio de mel ✿</div><p>Moda feminina com cor, leveza e personalidade.</p></div>
+    <div><div class="footer-title">Explore</div><p><a href="#novidades">Novidades</a><br><a href="#categorias">Categorias</a><br><a href="#mais-vendidos">Produtos</a></p></div>
+    <div><div class="footer-title">Atendimento</div><p><a id="footerWhats" href="#" target="_blank" rel="noopener">WhatsApp</a><br><a href="https://www.instagram.com/fio_de_mel/" target="_blank" rel="noopener">Instagram</a><br>Envios para todo o Brasil</p></div>
+  </div>
+  <div class="copyright">© <span id="year"></span> Fio de Mel. Todos os direitos reservados. <span style="float:right">Loja virtual demonstrativa</span></div>
+</footer>
+<a class="whatsapp" id="floatingWhats" href="#" target="_blank" rel="noopener" aria-label="Falar com a Fio de Mel pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.02 3.2A12.65 12.65 0 0 0 5.16 22.34L3.4 28.8l6.61-1.73A12.66 12.66 0 1 0 16.02 3.2Zm0 23.08a10.4 10.4 0 0 1-5.3-1.45l-.38-.23-3.92 1.03 1.05-3.82-.25-.4a10.42 10.42 0 1 1 8.8 4.87Zm5.72-7.8c-.31-.16-1.84-.91-2.13-1.02-.29-.1-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.36.23-.67.08-.31-.16-1.31-.48-2.49-1.54-.92-.82-1.54-1.84-1.72-2.15-.18-.31-.02-.48.14-.63.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.7-.97-2.33-.25-.61-.51-.53-.71-.54l-.6-.01c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.61s1.13 3.03 1.29 3.24c.16.21 2.22 3.39 5.37 4.75.75.32 1.34.51 1.8.65.76.24 1.45.2 2 .12.61-.09 1.84-.75 2.1-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg></a>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const WHATSAPP = '5561992971165'; // Confirme este número antes de publicar.
+const demoProducts = [
+ {name:'Vestido Solar',category:'Vestidos',price:'R$ 149,90',tag:'Novidade',image:'https://images.unsplash.com/photo-1495385794356-15371f348c31?auto=format&fit=crop&w=700&q=85'},
+ {name:'Conjunto Leveza',category:'Conjuntos',price:'R$ 189,90',tag:'Favorito',image:'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=85'},
+ {name:'Blusa Flor de Sal',category:'Blusas',price:'R$ 79,90',tag:'Novidade',image:'https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=700&q=85'},
+ {name:'Bolsa Tropical',category:'Acessórios',price:'R$ 99,90',tag:'Destaque',image:'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=85'},
+ {name:'Vestido Jardim',category:'Vestidos',price:'R$ 169,90',tag:'Edição especial',image:'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=85'},
+ {name:'Conjunto Brisa',category:'Conjuntos',price:'R$ 199,90',tag:'Mais vendido',image:'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=85'},
+ {name:'Blusa Girassol',category:'Blusas',price:'R$ 69,90',tag:'Essencial',image:'https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=700&q=85'},
+ {name:'Acessório Sol',category:'Acessórios',price:'R$ 49,90',tag:'Novidade',image:'https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85'}
+];
+let cartCount=0;
+function whatsappUrl(product=''){const msg=product?`Olá! Tenho interesse em ${product}. Gostaria de saber os tamanhos, valores e disponibilidade.`:'Olá! Gostaria de conhecer os produtos e receber informações de envio!';return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`}
+function renderProducts(filter='Todos'){const grid=document.getElementById('productGrid');const list=demoProducts.filter(p=>filter==='Todos'||p.category===filter);grid.innerHTML=list.map(p=>`<article class="product"><div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.opacity='.15'"><span class="tag">${p.tag}</span><button class="quick-add" onclick="addToBag('${p.name.replace(/'/g,"\\'")}')">Consultar no WhatsApp ↗</button></div><div class="product-info"><div class="product-name">${p.name}</div><div class="product-price">${p.price}</div><div class="note">${p.category}</div></div></article>`).join('')}
+function setFilter(filter){document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));renderProducts(filter)}
+function addToBag(name){cartCount++;document.getElementById('cartCount').textContent=cartCount;showToast('Abrindo o WhatsApp para consultar '+name+'…');window.open(whatsappUrl(name),'_blank','noopener')}
+let toastTimer;function showToast(message){const t=document.getElementById('toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.filter)));
+document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('mainNav').classList.toggle('open'));
+document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mainNav').classList.remove('open')));
+['contactButton','footerWhats','floatingWhats'].forEach(id=>document.getElementById(id).href=whatsappUrl());
+document.getElementById('year').textContent=new Date().getFullYear();
+renderProducts();
+const instaTrack=document.getElementById('instaTrack');
+const instaSlides=Array.from(instaTrack.querySelectorAll('.insta-slide'));
+const instaDots=document.getElementById('instaDots');
+const instaBlurFrames=Array.from(document.querySelectorAll('#instaBlurLayer iframe'));
+let activeInsta=0;
+instaSlides.forEach((_,i)=>{const dot=document.createElement('button');dot.className='insta-dot'+(i===0?' active':'');dot.setAttribute('aria-label','Ver publicação '+(i+1));dot.addEventListener('click',()=>goInsta(i));instaDots.appendChild(dot)});
+function updateInstaDecor(){Array.from(instaDots.children).forEach((d,j)=>d.classList.toggle('active',j===activeInsta));instaBlurFrames.forEach((f,j)=>f.classList.toggle('active',j===activeInsta));}
+function goInsta(i){activeInsta=(i+instaSlides.length)%instaSlides.length;instaTrack.scrollTo({left:instaSlides[activeInsta].offsetLeft,behavior:'smooth'});updateInstaDecor()}
+updateInstaDecor();
+// Avança automaticamente a cada 7 segundos e volta ao primeiro conteúdo após o último.
+setInterval(()=>goInsta(activeInsta+1),7000);
+instaTrack.addEventListener('scroll',()=>{let center=instaTrack.scrollLeft+instaTrack.clientWidth/2;let nearest=0,dist=Infinity;instaSlides.forEach((slide,i)=>{let d=Math.abs(slide.offsetLeft+slide.offsetWidth/2-center);if(d<dist){dist=d;nearest=i}});if(nearest!==activeInsta){activeInsta=nearest;updateInstaDecor()}},{passive:true});
+</script>
+</body>
+</html>
